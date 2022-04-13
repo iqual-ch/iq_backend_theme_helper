@@ -1,0 +1,5 @@
+name: 'iq_backend_theme helper'
+type: module
+description: 'Provides additional functionality and helpers for iq_backend_theme'
+package: 'Theme helper'
+core_version_requirement: ^8 || ^9

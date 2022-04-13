@@ -1,0 +1,20 @@
+{
+	"name": "iqual/iq_backend_theme_helper",
+	"description": "Helper functions for iq_backend_theme.",
+	"type": "drupal-custom-module",
+	"keywords": [
+		"Drupal"
+	],
+	"homepage": "https://github.com/iqual-ch/iq_barrio_helper",
+	"support": {
+		"issues": "https://github.com/iqual-ch/iq_barrio_helper/issues",
+		"source": "https://github.com/iqual-ch/iq_barrio_helper"
+	},
+	"extra": {
+		"drush": {
+			"services": {
+				"drush.services.yml": "^9"
+			}
+		}
+	}
+}

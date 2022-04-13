@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Contains iq_backend_theme_helper.module.
+ */
+
+use Drupal\gin\GinSettings;
+
+/**
+ * Implements hook_preprocess_HOOK() for page_attachments.
+ *
+ * Attach iq_backend_theme_helper/gin_toobar_overrides library if gin is active.
+ */
+function iq_backend_theme_helper_page_attachments_alter(&$page) {
+  // Are we relevant?
+  if (!_gin_toolbar_gin_is_active()) {
+    return;
+  }
+
+  $settings = \Drupal::classResolver(GinSettings::class);
+  $toolbar = $settings->get('classic_toolbar');
+
+  if ($toolbar === 'horizontal') {
+    $page['#attached']['library'][] = 'iq_backend_theme/gin_toobar_horizontal_overrides';
+  }
+
+  if ($toolbar === 'vertical') {
+    $page['#attached']['library'][] = 'iq_backend_theme/gin_toobar_vertical_overrides';
+  }
+
+}
